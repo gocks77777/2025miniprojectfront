@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제 생성기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>PDF로 문제 만들기</h1>
+        <div class="drop-area" id="drop-area">
+            <p>여기에 PDF 파일을 드래그 앤 드롭하세요</p>
+            <input type="file" id="fileElem" accept="application/pdf" style="display:none">
+            <button id="fileSelect">파일 선택</button>
+        </div>
+        <div class="options">
+            <label for="questionCount">문제 개수:</label>
+            <select id="questionCount">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+            </select>
+        </div>
+        <button class="generate-btn">문제 만들기</button>
+    </div>
+</body>
+</html>

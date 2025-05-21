@@ -1,0 +1,89 @@
+body {
+    background: #ede7e3;
+    font-family: 'Segoe UI', 'Pretendard', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 480px;
+    margin: 48px auto;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    padding: 36px 32px 32px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #1a3354;
+    font-size: 2rem;
+    margin-bottom: 32px;
+    font-weight: 700;
+}
+
+.drop-area {
+    border: 2px dashed #ff8a65;
+    background: #fff7f2;
+    border-radius: 12px;
+    padding: 36px 20px;
+    text-align: center;
+    color: #ff8a65;
+    margin-bottom: 28px;
+    width: 100%;
+    transition: background 0.2s, border 0.2s;
+}
+.drop-area.dragover {
+    background: #ffe0d1;
+    border-color: #ff7043;
+}
+#fileSelect {
+    margin-top: 16px;
+    background: #ff8a65;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 18px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#fileSelect:hover {
+    background: #ff7043;
+}
+.options {
+    margin-bottom: 24px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.options label {
+    font-weight: 500;
+    color: #1a3354;
+}
+#questionCount {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+.generate-btn {
+    width: 100%;
+    background: #1a3354;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 8px;
+}
+.generate-btn:hover {
+    background: #29406a;
+}

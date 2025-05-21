@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/lucide-static@0.299.0/font/lucide.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-bg">
+        <main class="main">
+            <div class="container">
+                <div class="header-row">
+                    <h1 class="title">Study Dashboard</h1>
+                    <div class="date-container">
+                        <span class="date">May 20, 2025</span>
+                    </div>
+                </div>
+                <div class="section subjects-section">
+                    <div class="section-label">Subjects</div>
+                    <div class="subject-slider-container">
+                        <button class="slider-nav-btn prev-btn">❮</button>
+                        <div class="subject-selector">
+                            <button class="subject-btn" data-subject="Biology">Biology</button>
+                            <button class="subject-btn" data-subject="Chemistry">Chemistry</button>
+                            <button class="subject-btn" data-subject="English">English</button>
+                            <button class="subject-btn" data-subject="Geography">Geography</button>
+                            <button class="subject-btn" data-subject="History">History</button>
+                            <button class="subject-btn active" data-subject="Mathematics">Mathematics</button>
+                            <button class="subject-btn" data-subject="Physics">Physics</button>
+                            <button class="subject-btn" data-subject="Psychology">Psychology</button>
+                        </div>
+                        <button class="slider-nav-btn next-btn">❯</button>
+                    </div>
+                </div>
+                <div class="section card">
+                    <div class="section-label bold">Study Progress</div>
+                    <div class="progress-table" id="progress-table">
+                        <!-- Progress rows will be rendered by JS -->
+                    </div>
+                </div>
+                <div class="section card">
+                    <div class="section-label bold">Incorrect Quiz Answers</div>
+                    <div class="quiz-list" id="quiz-list">
+                        <!-- Quiz cards will be rendered by JS -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
