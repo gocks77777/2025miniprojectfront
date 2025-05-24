@@ -1,0 +1,110 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #ffffff;
+}
+
+.dashboard-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+
+/* 카드 박스 */
+.section-card {
+  background-color: #f9fbff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.08);
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+/* 주간 통계 - 세로 막대 그래프 */
+.chart-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+  margin-top: 20px;
+  height: 160px;
+  padding-bottom: 20px;
+}
+
+.chart-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.chart-bar .bar {
+  width: 40px;
+  color: white;
+  border-radius: 6px 6px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 12px;
+  padding-bottom: 4px;
+  transition: height 0.3s;
+}
+
+.chart-bar span {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.chart-bar .accuracy {
+  font-size: 13px;
+}
+
+/* 히스토리 테이블 */
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.history-table th, .history-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+}
+
+.history-table th {
+  background-color: #e9f3ff;
+  color: #007bff;
+}
+
+/* 오답 노트 카드 */
+.wrong-note-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.note-card {
+  border: 1px solid #ccc;
+  border-left: 6px solid #dc3545;
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.03);
+}
