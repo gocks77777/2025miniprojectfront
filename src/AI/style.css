@@ -1,5 +1,5 @@
 body {
-    background: #ede7e3;
+    background: #F7EEDD;
     font-family: 'Segoe UI', 'Pretendard', Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -8,7 +8,7 @@ body {
 .container {
     max-width: 480px;
     margin: 48px auto;
-    background: #fff;
+    background: #ACE2E1;
     border-radius: 18px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.07);
     padding: 36px 32px 32px 32px;
@@ -18,30 +18,30 @@ body {
 }
 
 h1 {
-    color: #1a3354;
+    color: #008DDA;
     font-size: 2rem;
     margin-bottom: 32px;
     font-weight: 700;
 }
 
 .drop-area {
-    border: 2px dashed #ff8a65;
-    background: #fff7f2;
+    border: 2px dashed #41C9E2;
+    background: #F7EEDD;
     border-radius: 12px;
     padding: 36px 20px;
     text-align: center;
-    color: #ff8a65;
+    color: #008DDA;
     margin-bottom: 28px;
     width: 100%;
     transition: background 0.2s, border 0.2s;
 }
 .drop-area.dragover {
-    background: #ffe0d1;
-    border-color: #ff7043;
+    background: #ACE2E1;
+    border-color: #41C9E2;
 }
 #fileSelect {
     margin-top: 16px;
-    background: #ff8a65;
+    background: #008DDA;
     color: #fff;
     border: none;
     border-radius: 6px;
@@ -51,7 +51,7 @@ h1 {
     transition: background 0.2s;
 }
 #fileSelect:hover {
-    background: #ff7043;
+    background: #41C9E2;
 }
 .options {
     margin-bottom: 24px;
@@ -63,17 +63,17 @@ h1 {
 }
 .options label {
     font-weight: 500;
-    color: #1a3354;
+    color: #008DDA;
 }
 #questionCount {
     padding: 6px 12px;
     border-radius: 6px;
-    border: 1px solid #ddd;
+    border: 1px solid #41C9E2;
     font-size: 1rem;
 }
 .generate-btn {
     width: 100%;
-    background: #1a3354;
+    background: #008DDA;
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -85,5 +85,5 @@ h1 {
     margin-top: 8px;
 }
 .generate-btn:hover {
-    background: #29406a;
+    background: #41C9E2;
 }
