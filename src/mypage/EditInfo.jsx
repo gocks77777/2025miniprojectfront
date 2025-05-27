@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from '../api/axiosInstance';
 import { useNavigate } from 'react-router-dom';
-import './EditInfo.css';
+//import './EditInfo.css';
 
 export default function EditInfo() {
   const [name, setName] = useState('');
