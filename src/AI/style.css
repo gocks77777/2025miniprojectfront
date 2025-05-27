@@ -1,47 +1,53 @@
 body {
-    background: #F7EEDD;
+    background: #FFFFFF;
     font-family: 'Segoe UI', 'Pretendard', Arial, sans-serif;
     margin: 0;
     padding: 0;
+    color: #2463eb;
 }
 
 .container {
     max-width: 480px;
     margin: 48px auto;
-    background: #ACE2E1;
+    background: #FFFFFF;
     border-radius: 18px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.07);
     padding: 36px 32px 32px 32px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: #2463eb;
 }
 
 h1 {
-    color: #008DDA;
+    color: #2463eb;
+    background: #fff;
+    padding: 0;
+    border-radius: 0;
     font-size: 2rem;
     margin-bottom: 32px;
     font-weight: 700;
 }
 
 .drop-area {
-    border: 2px dashed #41C9E2;
-    background: #F7EEDD;
+    border: 2px dashed #2463eb;
+    background: #FFFFFF;
     border-radius: 12px;
     padding: 36px 20px;
     text-align: center;
-    color: #008DDA;
+    color: #2463eb;
     margin-bottom: 28px;
     width: 100%;
     transition: background 0.2s, border 0.2s;
 }
 .drop-area.dragover {
-    background: #ACE2E1;
-    border-color: #41C9E2;
+    background: #FFFFFF;
+    border-color: #2463eb;
+    color: #2463eb;
 }
 #fileSelect {
     margin-top: 16px;
-    background: #008DDA;
+    background: #2463eb;
     color: #fff;
     border: none;
     border-radius: 6px;
@@ -51,7 +57,9 @@ h1 {
     transition: background 0.2s;
 }
 #fileSelect:hover {
-    background: #41C9E2;
+    background: #FFFFFF;
+    color: #2463eb;
+    border: 1px solid #2463eb;
 }
 .options {
     margin-bottom: 24px;
@@ -60,20 +68,22 @@ h1 {
     align-items: center;
     justify-content: flex-end;
     gap: 10px;
+    color: #2463eb;
 }
 .options label {
     font-weight: 500;
-    color: #008DDA;
+    color: #2463eb;
 }
 #questionCount {
     padding: 6px 12px;
     border-radius: 6px;
-    border: 1px solid #41C9E2;
+    border: 1px solid #2463eb;
     font-size: 1rem;
+    color: #2463eb;
 }
 .generate-btn {
     width: 100%;
-    background: #008DDA;
+    background: #2463eb;
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -85,5 +95,7 @@ h1 {
     margin-top: 8px;
 }
 .generate-btn:hover {
-    background: #41C9E2;
+    background: #FFFFFF;
+    color: #2463eb;
+    border: 1px solid #2463eb;
 }
