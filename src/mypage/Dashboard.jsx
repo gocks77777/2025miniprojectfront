@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { useNavigate } from 'react-router-dom';
 import axios from '../api/axiosInstance';
 import './Dashboard.css';
@@ -97,6 +98,8 @@ export default function Dashboard() {
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
+=======
+>>>>>>> refs/remotes/origin/feature/AI
 import './Dashboard.css';
 
 export default function Dashboard() {
@@ -139,11 +142,14 @@ export default function Dashboard() {
           {weeklyStats.map((stat, i) => (
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
+=======
+>>>>>>> refs/remotes/origin/feature/AI
             <div key={i} className="chart-bar">
               <span>{stat.date}</span>
               <div
@@ -155,6 +161,7 @@ export default function Dashboard() {
               >
                 {stat.count}문제
               </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -171,6 +178,9 @@ export default function Dashboard() {
 =======
               <div className="accuracy" style={{ color: getColorByAccuracy(stat.accuracy) }}>
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
+=======
+              <div className="accuracy" style={{ color: getColorByAccuracy(stat.accuracy) }}>
+>>>>>>> refs/remotes/origin/feature/AI
                 {stat.accuracy}%
               </div>
             </div>
@@ -178,6 +188,7 @@ export default function Dashboard() {
         </div>
       </section>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -191,6 +202,9 @@ export default function Dashboard() {
 =======
       {/* 📅 학습 히스토리 */}
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
+=======
+      {/* 📅 학습 히스토리 */}
+>>>>>>> refs/remotes/origin/feature/AI
       <section className="section-card">
         <h3>📅 학습 히스토리</h3>
         <table className="history-table">
@@ -206,6 +220,7 @@ export default function Dashboard() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             {Array.isArray(weeklyStats) && weeklyStats.map((stat, i) => (
 =======
             {weeklyStats.map((stat, i) => (
@@ -216,6 +231,9 @@ export default function Dashboard() {
 =======
             {weeklyStats.map((stat, i) => (
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
+=======
+            {weeklyStats.map((stat, i) => (
+>>>>>>> refs/remotes/origin/feature/AI
               <tr key={i}>
                 <td>{stat.date}</td>
                 <td>{stat.subject}</td>
@@ -232,6 +250,7 @@ export default function Dashboard() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       {/* 오답 노트 */}
       <section className="section-card">
         <h3>❌ 오답 노트</h3>
@@ -242,6 +261,8 @@ export default function Dashboard() {
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
+=======
+>>>>>>> refs/remotes/origin/feature/AI
       {/* ❌ 오답 노트 */}
       <section className="section-card">
         <h3>❌ 오답 노트</h3>
@@ -249,11 +270,14 @@ export default function Dashboard() {
           {wrongNotes.map((note, i) => (
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
+=======
+>>>>>>> refs/remotes/origin/feature/AI
             <div className="note-card" key={i}>
               <strong>{note.subject}</strong>
               <p><b>문제:</b> {note.question}</p>

@@ -2,6 +2,7 @@ import { useState } from 'react';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import axios from '../api/axiosInstance';
 import { useNavigate } from 'react-router-dom';
 =======
@@ -13,6 +14,9 @@ import axios from 'axios';
 =======
 import axios from 'axios';
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
+=======
+import axios from 'axios';
+>>>>>>> refs/remotes/origin/feature/AI
 import './Signup.css';
 
 export default function Signup() {
@@ -20,6 +24,7 @@ export default function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirm, setConfirm] = useState('');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -50,6 +55,8 @@ export default function Signup() {
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
+=======
+>>>>>>> refs/remotes/origin/feature/AI
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -64,11 +71,14 @@ export default function Signup() {
       console.error('회원가입 실패:', error);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
+=======
+>>>>>>> refs/remotes/origin/feature/AI
       alert('회원가입에 실패했습니다.');
     }
   };
@@ -76,6 +86,7 @@ export default function Signup() {
   return (
     <div className="signup-wrapper">
       <div className="signup-container">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -93,6 +104,10 @@ export default function Signup() {
         <h1 className="logo">Quizie Hub</h1>
         <form className="signup-form" onSubmit={handleSignup}>
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
+=======
+        <h1 className="logo">Quizie Hub</h1>
+        <form className="signup-form" onSubmit={handleSignup}>
+>>>>>>> refs/remotes/origin/feature/AI
           <input
             type="text"
             placeholder="이름"
