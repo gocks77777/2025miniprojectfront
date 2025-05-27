@@ -1,7 +1,11 @@
 import { useState } from 'react';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import axios from '../api/axiosInstance';
 import { useNavigate } from 'react-router-dom';
+=======
+import axios from 'axios';
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 import axios from 'axios';
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
@@ -12,6 +16,7 @@ export default function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirm, setConfirm] = useState('');
+<<<<<<< HEAD
 <<<<<<< HEAD
   const navigate = useNavigate();
 
@@ -36,6 +41,8 @@ export default function Signup() {
     } catch (error) {
       console.error('❌ 회원가입 실패:', error.response?.data || error.message);
 =======
+=======
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -48,6 +55,9 @@ export default function Signup() {
       window.location.href = '/login';
     } catch (error) {
       console.error('회원가입 실패:', error);
+<<<<<<< HEAD
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
+=======
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
       alert('회원가입에 실패했습니다.');
     }
@@ -57,8 +67,13 @@ export default function Signup() {
     <div className="signup-wrapper">
       <div className="signup-container">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <div className="logo">Quizie Hub</div>
         <form onSubmit={handleSignup} className="signup-form">
+=======
+        <h1 className="logo">Quizie Hub</h1>
+        <form className="signup-form" onSubmit={handleSignup}>
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
         <h1 className="logo">Quizie Hub</h1>
         <form className="signup-form" onSubmit={handleSignup}>

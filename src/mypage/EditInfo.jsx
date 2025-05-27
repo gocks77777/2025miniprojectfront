@@ -1,8 +1,12 @@
 import { useState } from 'react';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import axios from '../api/axiosInstance';
 import { useNavigate } from 'react-router-dom';
 //import './EditInfo.css';
+=======
+import axios from 'axios';
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 import axios from 'axios';
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
@@ -11,6 +15,7 @@ export default function EditInfo() {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [confirm, setConfirm] = useState('');
+<<<<<<< HEAD
 <<<<<<< HEAD
   const navigate = useNavigate();
 
@@ -32,6 +37,8 @@ export default function EditInfo() {
     } catch (error) {
       console.error('❌ 정보 수정 실패:', error.response?.data || error.message);
 =======
+=======
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 
   const handleUpdate = async () => {
     if (password !== confirm) return alert('비밀번호가 일치하지 않습니다.');
@@ -43,12 +50,16 @@ export default function EditInfo() {
       alert('정보가 수정되었습니다.');
     } catch (error) {
       console.error('정보 수정 실패:', error);
+<<<<<<< HEAD
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
+=======
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
       alert('정보 수정에 실패했습니다.');
     }
   };
 
   const handleDelete = async () => {
+<<<<<<< HEAD
 <<<<<<< HEAD
     const confirmDelete = window.confirm('정말로 회원탈퇴하시겠습니까?');
     if (!confirmDelete) return;
@@ -62,6 +73,8 @@ export default function EditInfo() {
       console.error('❌ 회원탈퇴 실패:', error.response?.data || error.message);
       alert('회원탈퇴에 실패했습니다.');
 =======
+=======
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
     const token = localStorage.getItem('token');
     try {
       await axios.delete('/api/users/profile', {
@@ -73,11 +86,15 @@ export default function EditInfo() {
     } catch (error) {
       console.error('회원탈퇴 실패:', error);
       alert('회원탈퇴 실패: 비밀번호가 틀렸을 수 있습니다.');
+<<<<<<< HEAD
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
+=======
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
     }
   };
 
   return (
+<<<<<<< HEAD
 <<<<<<< HEAD
     <div className="edit-wrapper">
       <div className="edit-container">
@@ -108,6 +125,8 @@ export default function EditInfo() {
         </button>
       </div>
 =======
+=======
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
     <div className="container">
       <h1>회원정보 수정</h1>
       <input type="text" placeholder="이름 변경" value={name} onChange={(e) => setName(e.target.value)} />
@@ -115,6 +134,9 @@ export default function EditInfo() {
       <input type="password" placeholder="비밀번호 확인" value={confirm} onChange={(e) => setConfirm(e.target.value)} />
       <button onClick={handleUpdate}>정보 수정</button>
       <button onClick={handleDelete} style={{ background: 'red', color: 'white' }}>회원 탈퇴</button>
+<<<<<<< HEAD
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
+=======
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
     </div>
   );

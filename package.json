@@ -14,7 +14,11 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "react-router-dom": "^7.6.1"
+=======
+    "react-router-dom": "^7.6.0"
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
     "react-router-dom": "^7.6.0"
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
