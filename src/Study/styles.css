@@ -1,8 +1,37 @@
+body, html, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+}
+
+.page-center {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    padding: 36px 32px 32px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+}
+
 body {
     background: #FFFFFF;
     font-family: 'Segoe UI', 'Pretendard', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     color: #2463eb;
 }
 
@@ -10,18 +39,6 @@ body {
     min-height: 100vh;
     background: #FFFFFF;
     padding: 20px;
-}
-
-.main {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.container {
-    background: #FFFFFF;
-    border-radius: 20px;
-    box-shadow: 0 4px 24px rgba(36, 99, 235, 0.1);
-    padding: 32px;
 }
 
 .header-row {

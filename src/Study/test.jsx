@@ -2,146 +2,151 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './styles.css';
 
+const dummyProblems = [
+  {
+    problem_set_id: 1,
+    subject: '알고리즘',
+    difficulty_level: 'easy',
+    question_type: '서술형',
+    question: 'FIFO 원칙을 따르는 자료구조는?',
+    answer: ['큐', '스택', '트리'],
+  },
+  {
+    problem_set_id: 2,
+    subject: '알고리즘',
+    difficulty_level: 'medium',
+    question_type: '서술형',
+    question: '다음 중 시간복잡도가 O(n)인 알고리즘은?',
+    answer: ['버블 정렬', '선형 탐색', '퀵 정렬'],
+  },
+];
+
+const problemIds = [1, 2]; // 실제로 사용할 문제 ID 목록
+
 const Test = () => {
-    const [problems, setProblems] = useState([]);
-    const [currentSubject, setCurrentSubject] = useState('알고리즘');
-    const [selectedAnswers, setSelectedAnswers] = useState({});
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+  const [problems, setProblems] = useState(dummyProblems);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedAnswers, setSelectedAnswers] = useState([]);
+  const [showResult, setShowResult] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        const fetchProblems = async () => {
-            try {
-                setLoading(true);
-                setError(null);
-                
-                // 여러 문제 ID에 대한 데이터를 가져오기
-                const problemIds = [1, 2]; // 예시로 1, 2번 문제를 가져옴
-                const problemPromises = problemIds.map(id => 
-                    axios.get(`/api/problems/${id}`)
-                );
-                
-                const responses = await Promise.all(problemPromises);
-                const problemsData = responses.map(response => response.data);
-                
-                setProblems(problemsData);
-            } catch (err) {
-                setError('문제를 불러오는데 실패했습니다.');
-                console.error('Error fetching problems:', err);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchProblems();
-    }, []);
-
-    const handleAnswerSelect = (problemId, answer) => {
-        setSelectedAnswers(prev => ({
-            ...prev,
-            [problemId]: answer
-        }));
-    };
-
-    const handleSubmit = async () => {
-        try {
-            // 답안 제출 로직
-            const response = await axios.post('/api/problems/submit', {
-                answers: selectedAnswers
-            });
-            console.log('Submit response:', response.data);
-            // 성공 메시지 표시 또는 다음 단계로 이동
-        } catch (err) {
-            console.error('Error submitting answers:', err);
-            alert('답안 제출에 실패했습니다.');
-        }
-    };
-
-    if (loading) {
-        return (
-            <div className="dashboard-bg">
-                <main className="main">
-                    <div className="container">
-                        <div className="loading">문제를 불러오는 중...</div>
-                    </div>
-                </main>
-            </div>
+  // 실제 API에서 문제를 받아오는 코드 (주석 처리)
+  /*
+  useEffect(() => {
+    const fetchProblems = async () => {
+      setLoading(true);
+      try {
+        // 여러 문제를 병렬로 요청
+        const responses = await Promise.all(
+          problemIds.map(id => axios.get(`/api/problems/${id}`))
         );
+        setProblems(responses.map(res => res.data));
+      } catch (err) {
+        alert('문제 데이터를 불러오지 못했습니다.');
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchProblems();
+  }, []);
+  */
+
+  const currentProblem = problems[currentIndex];
+
+  const handleAnswerSelect = (answer) => {
+    const updatedAnswers = [...selectedAnswers];
+    updatedAnswers[currentIndex] = answer;
+    setSelectedAnswers(updatedAnswers);
+  };
+
+  const handleNext = () => {
+    if (currentIndex < problems.length - 1) {
+      setCurrentIndex(currentIndex + 1);
     }
+  };
 
-    if (error) {
-        return (
-            <div className="dashboard-bg">
-                <main className="main">
-                    <div className="container">
-                        <div className="error-message">{error}</div>
-                    </div>
-                </main>
-            </div>
-        );
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
     }
+  };
 
-    return (
-        <div className="dashboard-bg">
-            <main className="main">
-                <div className="container">
-                    <div className="header-row">
-                        <h1 className="title">Study Dashboard</h1>
-                        <div className="date-container">
-                            <span className="date">{new Date().toLocaleDateString()}</span>
-                        </div>
-                    </div>
+  const handleSubmit = () => {
+    setShowResult(true);
+  };
 
-                    <div className="section subjects-section">
-                        <div className="section-label">Subjects</div>
-                        <div className="subject-slider-container">
-                            <button className="slider-nav-btn prev-btn">❮</button>
-                            <div className="subject-selector">
-                                <button 
-                                    className={`subject-btn ${currentSubject === '알고리즘' ? 'active' : ''}`}
-                                    onClick={() => setCurrentSubject('알고리즘')}
-                                >
-                                    알고리즘
-                                </button>
-                                {/* 다른 과목 버튼들 추가 가능 */}
-                            </div>
-                            <button className="slider-nav-btn next-btn">❯</button>
-                        </div>
-                    </div>
+  const handleRestart = () => {
+    setCurrentIndex(0);
+    setSelectedAnswers([]);
+    setShowResult(false);
+  };
 
-                    <div className="section card">
-                        <div className="section-label bold">문제 풀이</div>
-                        <div className="quiz-list">
-                            {problems.map((problem) => (
-                                <div key={problem.problem_set_id} className="quiz-card">
-                                    <div className="quiz-header">
-                                        <span className="difficulty-badge">{problem.difficulty_level}</span>
-                                        <span className="question-type">{problem.question_type}</span>
-                                    </div>
-                                    <h3 className="question">{problem.question}</h3>
-                                    <div className="answer-options">
-                                        {problem.answer.map((option, index) => (
-                                            <button
-                                                key={index}
-                                                className={`answer-btn ${selectedAnswers[problem.problem_set_id] === option ? 'selected' : ''}`}
-                                                onClick={() => handleAnswerSelect(problem.problem_set_id, option)}
-                                            >
-                                                {option}
-                                            </button>
-                                        ))}
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+  if (loading) return <div className="page-center"><div>로딩 중...</div></div>;
+  if (!currentProblem) return null;
 
-                    <button className="submit-btn" onClick={handleSubmit}>
-                        제출하기
-                    </button>
+  return (
+    <div className="page-center">
+      <div className="dashboard-bg">
+        <main className="main">
+          <div className="container">
+            <h1 className="title">문제 풀이</h1>
+            {!showResult ? (
+              <div className="quiz-card">
+                <div className="quiz-header">
+                  <span className="difficulty-badge">{currentProblem.difficulty_level}</span>
+                  <span className="question-type">{currentProblem.question_type}</span>
                 </div>
-            </main>
-        </div>
-    );
+                <h3 className="question">{currentProblem.question}</h3>
+                <div className="answer-options">
+                  {Array.isArray(currentProblem.answer) && currentProblem.answer.map((option, idx) => (
+                    <button
+                      key={idx}
+                      className={`answer-btn ${selectedAnswers[currentIndex] === option ? 'selected' : ''}`}
+                      onClick={() => handleAnswerSelect(option)}
+                    >
+                      {option}
+                    </button>
+                  ))}
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 32 }}>
+                  {currentIndex > 0 && (
+                    <button className="submit-btn" style={{ width: '48%' }} onClick={handlePrev}>
+                      이전 문제
+                    </button>
+                  )}
+                  {currentIndex < problems.length - 1 && (
+                    <button className="submit-btn" style={{ width: currentIndex > 0 ? '48%' : '100%' }} onClick={handleNext} disabled={selectedAnswers[currentIndex] === undefined}>
+                      다음 문제
+                    </button>
+                  )}
+                  {currentIndex === problems.length - 1 && (
+                    <button className="submit-btn" style={{ width: currentIndex > 0 ? '48%' : '100%' }} onClick={handleSubmit} disabled={selectedAnswers[currentIndex] === undefined}>
+                      제출하기
+                    </button>
+                  )}
+                </div>
+              </div>
+            ) : (
+              <div className="quiz-card">
+                <h2>제출 완료</h2>
+                <ul style={{textAlign: 'left', marginTop: '20px'}}>
+                  {problems.map((prob, idx) => (
+                    <li key={prob.problem_set_id} style={{marginBottom: '10px'}}>
+                      <b>Q{idx+1}.</b> {prob.question}<br/>
+                      <span>
+                        내 답: {selectedAnswers[idx] || '미응답'}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                <button className="submit-btn" onClick={handleRestart} style={{marginTop: '24px'}}>다시 풀기</button>
+              </div>
+            )}
+          </div>
+        </main>
+      </div>
+    </div>
+  );
 };
 
 export default Test;
