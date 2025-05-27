@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { useNavigate } from 'react-router-dom';
 import axios from '../api/axiosInstance';
 import './Dashboard.css';
@@ -94,6 +95,8 @@ export default function Dashboard() {
 =======
 =======
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
+=======
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 import './Dashboard.css';
 
 export default function Dashboard() {
@@ -135,6 +138,9 @@ export default function Dashboard() {
         <div className="chart-area">
           {weeklyStats.map((stat, i) => (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
+=======
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
@@ -151,10 +157,14 @@ export default function Dashboard() {
               </div>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               <div
                 className="accuracy"
                 style={{ color: getColorByAccuracy(stat.accuracy) }}
               >
+=======
+              <div className="accuracy" style={{ color: getColorByAccuracy(stat.accuracy) }}>
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
               <div className="accuracy" style={{ color: getColorByAccuracy(stat.accuracy) }}>
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
@@ -170,7 +180,11 @@ export default function Dashboard() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       {/* 학습 히스토리 */}
+=======
+      {/* 📅 학습 히스토리 */}
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
       {/* 📅 학습 히스토리 */}
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
@@ -191,7 +205,11 @@ export default function Dashboard() {
           <tbody>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             {Array.isArray(weeklyStats) && weeklyStats.map((stat, i) => (
+=======
+            {weeklyStats.map((stat, i) => (
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
             {weeklyStats.map((stat, i) => (
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
@@ -213,6 +231,7 @@ export default function Dashboard() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       {/* 오답 노트 */}
       <section className="section-card">
         <h3>❌ 오답 노트</h3>
@@ -221,12 +240,17 @@ export default function Dashboard() {
 =======
 =======
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
+=======
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
       {/* ❌ 오답 노트 */}
       <section className="section-card">
         <h3>❌ 오답 노트</h3>
         <div className="wrong-note-list">
           {wrongNotes.map((note, i) => (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
+=======
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7

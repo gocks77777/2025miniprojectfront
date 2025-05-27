@@ -1,8 +1,12 @@
 import { useState } from 'react';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { useNavigate } from 'react-router-dom';
 import axios from '../api/axiosInstance'; // ✅ 본인 경로에 맞게 수정!
+=======
+import axios from 'axios';
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 import axios from 'axios';
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
@@ -16,9 +20,12 @@ export default function Login() {
   const [password, setPassword] = useState('');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   const [errorMsg, setErrorMsg] = useState('');
 
   const navigate = useNavigate();
+=======
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
@@ -27,6 +34,7 @@ export default function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       const res = await axios.post('/users/login', {
@@ -47,6 +55,8 @@ export default function Login() {
 =======
 =======
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
+=======
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
       const res = await axios.post('/api/users/login', { email, password });
       localStorage.setItem('token', res.data.token);
       window.location.href = '/mypage';
@@ -54,6 +64,9 @@ export default function Login() {
       console.error('로그인 실패:', error);
       alert('이메일 또는 비밀번호가 올바르지 않습니다.');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
+=======
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
@@ -81,7 +94,10 @@ export default function Login() {
           />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           {errorMsg && <p className="error-msg">{errorMsg}</p>}
+=======
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
