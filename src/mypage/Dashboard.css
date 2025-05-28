@@ -20,12 +20,7 @@ h1 {
 
 h2 {
   font-weight: normal;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 /* 상단 버튼 영역 */
@@ -61,31 +56,6 @@ h2 {
   background-color: #c82333;
 }
 
-=======
-  margin-bottom: 30px;
-}
-
->>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
-=======
-  margin-bottom: 30px;
-}
-
->>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
-=======
-  margin-bottom: 30px;
-}
-
->>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
-=======
-  margin-bottom: 30px;
-}
-
->>>>>>> refs/remotes/origin/feature/AI
-=======
-  margin-bottom: 30px;
-}
-
->>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 /* 카드 박스 */
 .section-card {
   background-color: #f9fbff;
