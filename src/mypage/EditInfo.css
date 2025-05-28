@@ -1,0 +1,61 @@
+.edit-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.edit-container {
+  width: 100%;
+  max-width: 360px;
+  padding: 30px;
+  background-color: #f8faff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.1);
+  text-align: center;
+}
+
+.edit-container h1 {
+  margin-bottom: 24px;
+  color: #007bff;
+}
+
+.edit-container input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.edit-button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  background-color: #0056b3;
+}
+
+.delete-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #dc3545;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #b02a37;
+}
