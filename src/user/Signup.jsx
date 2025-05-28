@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import axios from 'axios';
+import axios from '../api/axiosInstance';
+import { useNavigate } from 'react-router-dom';
 import './Signup.css';
 
 export default function Signup() {
@@ -7,18 +8,28 @@ export default function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirm, setConfirm] = useState('');
+  const navigate = useNavigate();
 
   const handleSignup = async (e) => {
     e.preventDefault();
+
     if (password !== confirm) {
-      return alert('비밀번호가 일치하지 않습니다.');
+      alert('비밀번호가 일치하지 않습니다.');
+      return;
     }
+
     try {
-      await axios.post('/api/users/register', { name, email, password });
-      alert('회원가입 성공! 로그인 해주세요.');
-      window.location.href = '/login';
+      const res = await axios.post('/users/register', {
+        name,
+        email,
+        password,
+      });
+
+      console.log('✅ 회원가입 성공:', res.data);
+      alert('회원가입이 완료되었습니다.');
+      navigate('/login');
     } catch (error) {
-      console.error('회원가입 실패:', error);
+      console.error('❌ 회원가입 실패:', error.response?.data || error.message);
       alert('회원가입에 실패했습니다.');
     }
   };
@@ -26,8 +37,8 @@ export default function Signup() {
   return (
     <div className="signup-wrapper">
       <div className="signup-container">
-        <h1 className="logo">Quizie Hub</h1>
-        <form className="signup-form" onSubmit={handleSignup}>
+        <div className="logo">Quizie Hub</div>
+        <form onSubmit={handleSignup} className="signup-form">
           <input
             type="text"
             placeholder="이름"
