@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from '../api/axiosInstance';
 import './Dashboard.css';
 
 export default function Dashboard() {
@@ -28,20 +27,16 @@ export default function Dashboard() {
       try {
         console.log('✅ 더미 데이터 세팅 시작');
 
-        // 더미 유저
         const dummyUser = { name: '홍길동' };
         setUser(dummyUser);
 
-        // 더미 통계
         const dummyStats = [
           { date: '5월 13일', subject: '자료구조', count: 12, accuracy: 80 },
           { date: '5월 14일', subject: '운영체제', count: 10, accuracy: 60 },
           { date: '5월 15일', subject: '디지털시스템', count: 8, accuracy: 90 },
         ];
         setWeeklyStats(dummyStats);
-        console.log('✅ 주간 통계:', dummyStats);
 
-        // 더미 오답노트
         const dummyWrongNotes = [
           {
             subject: '자료구조',
@@ -55,7 +50,6 @@ export default function Dashboard() {
           },
         ];
         setWrongNotes(dummyWrongNotes);
-        console.log('✅ 오답 노트:', dummyWrongNotes);
       } catch (err) {
         console.warn('데이터 세팅 실패:', err);
         setError('데이터를 불러올 수 없습니다.');
@@ -84,11 +78,11 @@ export default function Dashboard() {
         </button>
       </div>
 
-      {/* 주간 학습 통계 */}
+      {/* 📊 주간 학습 통계 */}
       <section className="section-card">
         <h3>📊 주간 학습 통계</h3>
         <div className="chart-area">
-          {Array.isArray(weeklyStats) && weeklyStats.map((stat, i) => (
+          {weeklyStats.map((stat, i) => (
             <div key={i} className="chart-bar">
               <span>{stat.date}</span>
               <div
@@ -100,10 +94,7 @@ export default function Dashboard() {
               >
                 {stat.count}문제
               </div>
-              <div
-                className="accuracy"
-                style={{ color: getColorByAccuracy(stat.accuracy) }}
-              >
+              <div className="accuracy" style={{ color: getColorByAccuracy(stat.accuracy) }}>
                 {stat.accuracy}%
               </div>
             </div>
@@ -111,7 +102,7 @@ export default function Dashboard() {
         </div>
       </section>
 
-      {/* 학습 히스토리 */}
+      {/* 📅 학습 히스토리 */}
       <section className="section-card">
         <h3>📅 학습 히스토리</h3>
         <table className="history-table">
@@ -124,7 +115,7 @@ export default function Dashboard() {
             </tr>
           </thead>
           <tbody>
-            {Array.isArray(weeklyStats) && weeklyStats.map((stat, i) => (
+            {weeklyStats.map((stat, i) => (
               <tr key={i}>
                 <td>{stat.date}</td>
                 <td>{stat.subject}</td>
@@ -138,11 +129,11 @@ export default function Dashboard() {
         </table>
       </section>
 
-      {/* 오답 노트 */}
+      {/* ❌ 오답 노트 */}
       <section className="section-card">
         <h3>❌ 오답 노트</h3>
         <div className="wrong-note-list">
-          {Array.isArray(wrongNotes) && wrongNotes.map((note, i) => (
+          {wrongNotes.map((note, i) => (
             <div className="note-card" key={i}>
               <strong>{note.subject}</strong>
               <p><b>문제:</b> {note.question}</p>
