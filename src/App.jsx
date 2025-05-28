@@ -7,6 +7,7 @@ import EditInfo from './Mypage/EditInfo';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import Study from './Study/test';
 import FileUpload from './AI/fileUpload';
 =======
@@ -17,6 +18,8 @@ import FileUpload from './AI/fileUpload';
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 >>>>>>> refs/remotes/origin/feature/AI
+=======
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 
 export default function App() {
   console.log("앱 렌더링");
@@ -33,6 +36,7 @@ export default function App() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <Route path="/study" element={<Study />} />
         <Route path="/fileupload" element={<FileUpload />} />
 =======
@@ -41,10 +45,13 @@ export default function App() {
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 >>>>>>> refs/remotes/origin/feature/AI
+=======
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
       </Routes>
     </BrowserRouter>
   );
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -60,3 +67,5 @@ export default function App() {
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 >>>>>>> refs/remotes/origin/feature/AI
+=======
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7

@@ -3,6 +3,7 @@ import { useState } from 'react';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import axios from '../api/axiosInstance';
 import { useNavigate } from 'react-router-dom';
 //import './EditInfo.css';
@@ -18,11 +19,15 @@ import axios from 'axios';
 =======
 import axios from 'axios';
 >>>>>>> refs/remotes/origin/feature/AI
+=======
+import axios from 'axios';
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 
 export default function EditInfo() {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [confirm, setConfirm] = useState('');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -53,6 +58,8 @@ export default function EditInfo() {
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 >>>>>>> refs/remotes/origin/feature/AI
+=======
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 
   const handleUpdate = async () => {
     if (password !== confirm) return alert('비밀번호가 일치하지 않습니다.');
@@ -67,6 +74,7 @@ export default function EditInfo() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
@@ -74,11 +82,14 @@ export default function EditInfo() {
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 >>>>>>> refs/remotes/origin/feature/AI
+=======
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
       alert('정보 수정에 실패했습니다.');
     }
   };
 
   const handleDelete = async () => {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -101,6 +112,8 @@ export default function EditInfo() {
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 >>>>>>> refs/remotes/origin/feature/AI
+=======
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
     const token = localStorage.getItem('token');
     try {
       await axios.delete('/api/users/profile', {
@@ -115,6 +128,7 @@ export default function EditInfo() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
@@ -122,10 +136,13 @@ export default function EditInfo() {
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 >>>>>>> refs/remotes/origin/feature/AI
+=======
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
     }
   };
 
   return (
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -165,6 +182,8 @@ export default function EditInfo() {
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 >>>>>>> refs/remotes/origin/feature/AI
+=======
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
     <div className="container">
       <h1>회원정보 수정</h1>
       <input type="text" placeholder="이름 변경" value={name} onChange={(e) => setName(e.target.value)} />
@@ -175,6 +194,7 @@ export default function EditInfo() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
@@ -182,6 +202,8 @@ export default function EditInfo() {
 >>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
 =======
 >>>>>>> refs/remotes/origin/feature/AI
+=======
+>>>>>>> 6e67a1c374769feb343e8fb9c044e50826654ec7
     </div>
   );
 }
