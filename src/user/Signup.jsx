@@ -1,6 +1,6 @@
 import { useState } from 'react';
+import axios from '../api/axiosInstance';
 import { useNavigate } from 'react-router-dom';
-import axios from '../api/axiosInstance'; // ✔️ 실제 API 인스턴스 경로
 import './Signup.css';
 
 export default function Signup() {
@@ -37,8 +37,8 @@ export default function Signup() {
   return (
     <div className="signup-wrapper">
       <div className="signup-container">
-        <h1 className="logo">Quizie Hub</h1>
-        <form className="signup-form" onSubmit={handleSignup}>
+        <div className="logo">Quizie Hub</div>
+        <form onSubmit={handleSignup} className="signup-form">
           <input
             type="text"
             placeholder="이름"

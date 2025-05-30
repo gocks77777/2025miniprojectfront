@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import axios from 'axios';
-import './style.css';
+import './fileUpload.css';
 
 const FileUpload = () => {
     const [files, setFiles] = useState([]);
@@ -69,34 +69,43 @@ const FileUpload = () => {
     };
 
     return (
-        <div className="page-center">
-            <div className="container">
-                <h1>PDF로 문제 만들기</h1>
-                <div 
-                    className={`drop-area ${isDragging ? 'dragging' : ''}`}
+        <div className="fileupload-wrapper">
+            <div className="section-card">
+                <h1 className="fileupload-title">PDF로 문제 만들기</h1>
+                <div className="fileupload-desc" style={{whiteSpace: 'nowrap'}}>
+                  PDF 파일을 업로드하여 자동으로 문제를 생성하세요
+                </div>
+                <div
+                    className={`drop-area${isDragging ? ' dragging' : ''}`}
                     onDragOver={handleDragOver}
                     onDragLeave={handleDragLeave}
                     onDrop={handleDrop}
                 >
-                    <p>여기에 PDF 파일을 드래그 앤 드롭하세요</p>
-                    <input 
-                        type="file" 
+                    <p>파일을 드래그하여 업로드</p>
+                    <div className="drop-or">또는</div>
+                    <input
+                        type="file"
                         ref={fileInputRef}
                         onChange={handleFileSelect}
-                        accept="application/pdf" 
+                        accept="application/pdf"
                         multiple
                         style={{ display: 'none' }}
                     />
-                    <button onClick={() => fileInputRef.current.click()}>
-                        파일 선택
+                    <button
+                        type="button"
+                        onClick={() => fileInputRef.current.click()}
+                        className="upload-btn"
+                        disabled={files.length === 0}
+                    >
+                        + 컴퓨터에서 파일 선택
                     </button>
+                    <div className="fileupload-note">PDF 파일만 지원됩니다</div>
                     {files.length > 0 && (
                         <div style={{width: '100%', marginTop: 10}}>
                             {files.map((file, idx) => (
                                 <p className="file-name" key={file.name + idx}>
                                     <span className="file-name-text">선택된 파일: {file.name}</span>
-                                    <button className="remove-file-btn" onClick={() => handleRemoveFile(idx)} title="파일 삭제"
-                                        style={{background: 'none', border: 'none', color: '#ef4444', fontWeight: 'bold', cursor: 'pointer', fontSize: '1.1em'}}>
+                                    <button className="remove-file-btn" onClick={() => handleRemoveFile(idx)} title="파일 삭제">
                                         ×
                                     </button>
                                 </p>
@@ -104,9 +113,9 @@ const FileUpload = () => {
                         </div>
                     )}
                 </div>
-                <div className="options">
-                    <label htmlFor="questionCount">문제 개수:</label>
-                    <select 
+                <div className="options-card">
+                    <label htmlFor="questionCount">문제 개수</label>
+                    <select
                         id="questionCount"
                         value={questionCount}
                         onChange={(e) => setQuestionCount(e.target.value)}
@@ -117,7 +126,11 @@ const FileUpload = () => {
                         <option value="20">20</option>
                     </select>
                 </div>
-                <button className="generate-btn" onClick={handleSubmit}>
+                <button
+                    className={`generate-btn${files.length > 0 ? ' active' : ''}`}
+                    onClick={handleSubmit}
+                    disabled={files.length === 0}
+                >
                     문제 만들기
                 </button>
             </div>
