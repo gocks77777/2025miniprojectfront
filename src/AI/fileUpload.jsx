@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import axios from 'axios';
+import axiosInstance from '../api/axiosInstance';
 import './fileUpload.css';
 
 const FileUpload = () => {
@@ -56,7 +56,7 @@ const FileUpload = () => {
         formData.append('questionCount', questionCount);
 
         try {
-            const response = await axios.post('/api/ai/upload', formData, {
+            const response = await axiosInstance.post('/api/ai/upload', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
